@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!-- ============================================
+         META TAGS Y CONFIGURACIÓN BÁSICA
+         ============================================ -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hades Salem - Trinkets multifandom. Llaveros, prints, pines y más de 50 fandoms diferentes."
+    />
+    <meta
+      name="keywords"
+      content="trinkets, llaveros, prints, pines, fanart, merchandise, argentina, hades salem"
+    />
+    <meta name="author" content="Hades Salem" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Hades Salem - Trinkets Multifandom" />
+    <meta
+      property="og:description"
+      content="Más de 350 diseños de trinkets multifandom. Llaveros, prints, pines y más."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/ico" href="img/logo.ico" />
+
+    <title>Hades Salem</title>
+
+    <!-- ============================================
+         ESTILOS Y FUENTES
+         ============================================ -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+
+  <body>
+    <!-- ============================================
+         FONDO ANIMADO CON FUEGO
+         ============================================ -->
+    <div class="fire-background">
+      <!-- Llamas principales -->
+      <div class="flame flame-1"></div>
+      <div class="flame flame-2"></div>
+      <div class="flame flame-3"></div>
+
+      <!-- Brasas flotantes -->
+      <div class="ember ember-1"></div>
+      <div class="ember ember-2"></div>
+      <div class="ember ember-3"></div>
+      <div class="ember ember-4"></div>
+      <div class="ember ember-5"></div>
+    </div>
+
+    <!-- ============================================
+         NAVEGACIÓN PRINCIPAL
+         ============================================ -->
+    <nav class="nav">
+      <div class="nav-container">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            src="img/logo-principal.png"
+            alt="Hades Salem Logo"
+            class="logo-image"
+            onerror="
+              this.style.display = 'none';
+              this.nextElementSibling.style.display = 'flex';
+            "
+          />
+        </div>
+
+        <!-- Menú de navegación -->
+        <ul class="nav-menu">
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#sobre-mi">Sobre Mí</a></li>
+          <li><a href="#contacto" class="btn-contact">Contacto</a></li>
+        </ul>
+
+        <!-- Botón toggle para móvil -->
+        <button class="nav-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- ============================================
+         SECCIÓN HERO
+         ============================================ -->
+    <section class="hero">
+      <div class="hero-content">
+        <!-- Título principal -->
+        <h1 class="hero-title">
+          <span class="title-line">ENCONTRÁ TU</span>
+          <span class="title-line title-featured">TRINKET MULTIFANDOM</span>
+        </h1>
+
+        <!-- Subtítulo con estadísticas -->
+        <p class="hero-subtitle">
+          Más de 50 fandoms · Siempre creando contenido nuevo
+        </p>
+
+        <!-- Botones de acción -->
+        <div class="hero-cta">
+          <a href="#galeria" class="btn btn-primary">
+            Explorar Fandoms
+            <span class="btn-glow"></span>
+          </a>
+          <a href="#productos" class="btn btn-secondary">Ver Productos</a>
+        </div>
+      </div>
+
+      <!-- Indicador de scroll -->
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN GALERÍA
+         ============================================ -->
+    <section id="galeria" class="gallery">
+      <div class="container">
+        <!-- Encabezado de sección -->
+        <h2 class="section-title">
+          <span class="title-accent">Explora</span> por Fandom
+        </h2>
+        <p class="section-subtitle">Más de 350 diseños disponibles</p>
+
+        <!-- Filtros de fandoms (se generan dinámicamente) -->
+        <div class="fandom-filters" id="fandomFilters">
+          <!-- Se generan dinámicamente desde gallery-data.json -->
+        </div>
+
+        <!-- Vista de productos destacados (inicial) -->
+        <div id="featuredView" class="featured-products">
+          <h3 class="featured-title">Fandoms Más Vendidos</h3>
+          <div class="gallery-grid" id="featuredGrid">
+            <!-- Se generan dinámicamente desde gallery-data.json -->
+          </div>
+        </div>
+
+        <!-- Vista de detalle de fandom (se muestra al seleccionar) -->
+        <div id="fandomView" class="fandom-detail" style="display: none">
+          <!-- Nombre del fandom seleccionado -->
+          <h3 class="fandom-name" id="selectedFandomName"></h3>
+
+          <!-- Filtros por tipo de producto -->
+          <div class="product-type-filters" id="productTypeFilters">
+            <!-- Se generan dinámicamente -->
+          </div>
+
+          <!-- Grid de productos con paginación -->
+          <div class="product-pagination-container">
+            <!-- Flecha anterior -->
+            <button
+              class="pagination-arrow prev"
+              id="prevPage"
+              aria-label="Página anterior"
+            >
+              ‹
+            </button>
+
+            <!-- Contenedor del grid -->
+            <div class="product-grid-wrapper">
+              <div class="product-grid" id="productGrid">
+                <!-- Se generan dinámicamente -->
+              </div>
+            </div>
+
+            <!-- Flecha siguiente -->
+            <button
+              class="pagination-arrow next"
+              id="nextPage"
+              aria-label="Página siguiente"
+            >
+              ›
+            </button>
+          </div>
+
+          <!-- Botón "Ver Más" (opcional) -->
+          <div
+            class="see-more-container"
+            id="seeMoreContainer"
+            style="display: none"
+          >
+            <button class="btn btn-secondary" id="seeMoreBtn">
+              Ver Más Productos
+            </button>
+          </div>
+        </div>
+
+        <!-- Call-to-action del catálogo completo -->
+        <div class="catalog-cta">
+          <a href="#" class="btn btn-primary catalog-btn" id="catalogBtn">
+            Ver Catálogo Completo en Drive
+            <span class="btn-glow"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN PRODUCTOS
+         ============================================ -->
+    <section id="productos" class="products">
+      <div class="container">
+        <!-- Encabezado de sección -->
+        <h2 class="section-title">
+          <span class="title-accent">Mis</span> Productos
+        </h2>
+        <p class="section-subtitle">
+          Trinkets de alta calidad para coleccionar
+        </p>
+
+        <!-- Grid de productos -->
+        <div class="products-grid">
+          <!-- Llaveros -->
+          <div class="product-card featured">
+            <div class="featured-badge">Popular</div>
+            <div class="product-icon"><i data-lucide="key-round"></i></div>
+            <h3 class="product-title">Llaveros</h3>
+            <p class="product-description">
+              Llaveros de acrílico con mosquetones y decorativos
+            </p>
+            <div class="product-features">
+              <span class="feature">6cm aprox</span>
+              <span class="feature">Simple o Doble Cara</span>
+              <span class="feature">Argollas reforzadas</span>
+            </div>
+            <div class="product-price">Desde $6.500</div>
+          </div>
+
+          <!-- Prints -->
+          <div class="product-card">
+            <div class="product-icon"><i data-lucide="file-image"></i></div>
+            <h3 class="product-title">Prints</h3>
+            <p class="product-description">Impresiones en papel fotográfico</p>
+            <div class="product-features">
+              <span class="feature">A4 / A5</span>
+              <span class="feature">Semi-Mate</span>
+              <span class="feature">150 gsm</span>
+            </div>
+            <div class="product-price">Desde $2.500</div>
+          </div>
+
+          <!-- Pines -->
+          <div class="product-card">
+            <div class="product-icon"><i data-lucide="circle-dot"></i></div>
+            <h3 class="product-title">Pines</h3>
+            <p class="product-description">
+              Pins de metal con aguja y cierre de seguridad
+            </p>
+            <div class="product-features">
+              <span class="feature">55 mm</span>
+              <span class="feature">Metal</span>
+              <span class="feature">Broche Aguja</span>
+            </div>
+            <div class="product-price">Desde $2.800</div>
+          </div>
+
+          <!-- Phone Charms -->
+          <div class="product-card">
+            <div class="product-icon"><i data-lucide="smartphone"></i></div>
+            <h3 class="product-title">Phone Charms</h3>
+            <p class="product-description">
+              Accesorios para celular con colgante de acrílico
+            </p>
+            <div class="product-features">
+              <span class="feature">4cm aprox</span>
+              <span class="feature">Cuerda resistente</span>
+              <span class="feature">Compatible universal</span>
+            </div>
+            <div class="product-price">Desde $2.000</div>
+          </div>
+
+          <!-- Mini Llaveros -->
+          <div class="product-card">
+            <div class="product-icon"><i data-lucide="key"></i></div>
+            <h3 class="product-title">Mini Llaveros</h3>
+            <p class="product-description">
+              Versión compacta de 4cm con diseños adorables
+            </p>
+            <div class="product-features">
+              <span class="feature">4cm aprox</span>
+              <span class="feature">Diseño kawaii</span>
+              <span class="feature">Coleccionables</span>
+            </div>
+            <div class="product-price">Desde $2.000</div>
+          </div>
+
+          <!-- Stickers -->
+          <div class="product-card">
+            <div class="product-icon"><i data-lucide="sticker"></i></div>
+            <h3 class="product-title">Stickers</h3>
+            <p class="product-description">
+              Calcomanías resistentes al agua con acabado vinilo
+            </p>
+            <div class="product-features">
+              <span class="feature">Varios tamaños</span>
+              <span class="feature">Resistente agua</span>
+              <span class="feature">Vinilo premium</span>
+            </div>
+            <div class="product-price">Desde $500</div>
+          </div>
+        </div>
+        <!-- Comisiones Personalizadas -->
+        <div class="custom-commissions">
+          <div class="commission-card">
+            <h3>Comisiones Personalizadas</h3>
+            <p>¿Tenés una idea específica? ¡Creo el diseño que quieras!</p>
+            <div class="commission-price">Desde $10.000</div>
+            <a href="#contacto" class="btn btn-primary">Consultar Comisión</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN SOBRE MÍ
+         ============================================ -->
+    <section id="sobre-mi" class="about">
+      <div class="container">
+        <div class="about-content">
+          <!-- Contenido textual -->
+          <div class="about-text">
+            <h2 class="section-title">
+              <span class="title-accent">Sobre</span> Mí
+            </h2>
+            <p>
+              ¡Hola! Soy <strong>Hades Salem</strong>, una artista digital con 8
+              años de experiencia creando mundos vibrantes y personajes únicos
+              en estilo cartoon.
+            </p>
+            <p>
+              Mi pasión es encontrar la forma de expresarme mediante el dibujo,
+              y mi punto fuerte es estar siempre creando contenido nuevo para
+              mis seguidores, abarcando más de 50 fandoms distintos.
+            </p>
+            <p>
+              Siempre intento cumplir la mayor cantidad de peticiones posibles
+              para llegar a más personas y que todos puedan encontrar su merch
+              favorito.
+            </p>
+
+            <!-- Estadísticas -->
+            <div class="about-stats">
+              <div class="stat">
+                <div class="stat-number">350+</div>
+                <div class="stat-label">Diseños</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Fandoms</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">70+</div>
+                <div class="stat-label">Clientes Felices</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Imagen del artista -->
+          <div class="about-image">
+            <img
+              src="img/sobre-mi.jpg"
+              alt="Hades Salem - Artista"
+              onerror="this.src = 'img/placeholder.jpg'"
+            />
+            <div class="image-decoration"></div>
+          </div>
+        </div>
+
+        <!-- Información de envíos -->
+        <div class="shipping-info">
+          <h3 class="shipping-title">
+            <i data-lucide="package"></i> Envíos y Entregas
+          </h3>
+          <div class="shipping-grid">
+            <!-- Retiro en ferias -->
+            <div class="shipping-card">
+              <div class="shipping-icon"><i data-lucide="tent"></i></div>
+              <h4>Retiro en Ferias</h4>
+              <p>
+                Retiro personal en eventos y ferias de Capital Federal. Sin
+                cargo adicional.
+              </p>
+            </div>
+
+            <!-- Envíos a todo el país -->
+            <div class="shipping-card">
+              <div class="shipping-icon"><i data-lucide="truck"></i></div>
+              <h4>Envío Nacional</h4>
+              <p>
+                Envíos a todo el país por Correo Argentino. Consultá costos
+                según tu ubicación.
+              </p>
+            </div>
+
+            <!-- Entrega coordinada -->
+            <div class="shipping-card">
+              <div class="shipping-icon"><i data-lucide="map-pin"></i></div>
+              <h4>Entrega CABA</h4>
+              <p>
+                Entregas coordinadas en puntos de encuentro en Capital Federal,
+                Almagro.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         SECCIÓN CONTACTO
+         ============================================ -->
+    <section id="contacto" class="contact">
+      <div class="container">
+        <!-- Encabezado de sección -->
+        <h2 class="section-title">
+          <span class="title-accent">Conecta</span> Conmigo
+        </h2>
+        <p class="section-subtitle">
+          ¿Tenés alguna pregunta o querés hacer un pedido?
+        </p>
+
+        <!-- Contenedor principal de contacto -->
+        <div class="contact-content">
+          <!-- Formulario de contacto (ahora dentro de un contenedor) -->
+          <div class="contact-form-container">
+            <h3 class="form-title">Enviame un Mensaje</h3>
+            <form class="contact-form">
+              <!-- Campo: Nombre -->
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+
+              <!-- Campo: Email -->
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+
+              <!-- Campo: Producto de interés -->
+              <div class="form-group">
+                <label for="product">Producto de Interés</label>
+                <select id="product" name="product">
+                  <option value="">Seleccioná una opción</option>
+                  <option value="llavero">Llavero</option>
+                  <option value="print">Print</option>
+                  <option value="pin">Pin</option>
+                  <option value="phone-charm">Phone Charm</option>
+                  <option value="mini-llavero">Mini Llavero</option>
+                  <option value="sticker">Sticker</option>
+                  <option value="personalizado">Diseño Personalizado</option>
+                  <option value="comision">Comisión</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <!-- Campo: Mensaje -->
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+
+              <!-- Botón de envío -->
+              <button type="submit" class="btn btn-primary btn-submit">
+                Enviar Mensaje
+                <span class="btn-glow"></span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Información de contacto (reorganizada y compacta) -->
+          <div class="contact-info-container">
+            <!-- Métodos de contacto -->
+            <div class="contact-section">
+              <h3 class="contact-section-title">Contacto Directo</h3>
+              <div class="contact-methods">
+                <!-- Email -->
+                <div class="contact-method">
+                  <div class="method-icon"><i data-lucide="mail"></i></div>
+                  <div class="method-details">
+                    <h4>Email</h4>
+                    <a href="mailto:hades.salem@gmail.com"
+                      >hades.salem@gmail.com</a
+                    >
+                  </div>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="contact-method">
+                  <div class="method-icon">
+                    <i data-lucide="message-circle"></i>
+                  </div>
+                  <div class="method-details">
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/5491124557767" target="_blank"
+                      >+54 11 2455-7767</a
+                    >
+                  </div>
+                </div>
+
+                <!-- Instagram -->
+                <div class="contact-method">
+                  <div class="method-icon"><i data-lucide="instagram"></i></div>
+                  <div class="method-details">
+                    <h4>Instagram</h4>
+                    <a href="https://instagram.com/hades.salem" target="_blank"
+                      >@hades.salem</a
+                    >
+                  </div>
+                </div>
+
+                <!-- TikTok -->
+                <div class="contact-method">
+                  <div class="method-icon"><i data-lucide="music"></i></div>
+                  <div class="method-details">
+                    <h4>TikTok</h4>
+                    <a href="https://tiktok.com/@hades.salem" target="_blank"
+                      >@hades.salem</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Métodos de pago -->
+            <div class="contact-section">
+              <h3 class="contact-section-title">
+                <i data-lucide="credit-card"></i> Métodos de Pago
+              </h3>
+              <div class="payment-badges">
+                <span class="payment-badge">Transferencia</span>
+                <span class="payment-badge">MercadoPago</span>
+                <span class="payment-badge">Efectivo</span>
+              </div>
+            </div>
+
+            <!-- Políticas -->
+            <div class="contact-section">
+              <h3 class="contact-section-title">
+                <i data-lucide="clipboard-list"></i> Políticas
+              </h3>
+              <ul class="policies-list">
+                <li>✓ Cambios y devoluciones aceptadas</li>
+                <li>
+                  ✓ Envío de devolución a cargo del cliente o entrega en ferias
+                </li>
+                <li>✓ Reparación gratuita de argollas</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <!-- Marca y redes sociales -->
+          <div class="footer-brand">
+            <div class="footer-logo">
+              <span>HADES SALEM</span>
+            </div>
+            <p>Trinkets multifandom · +50 fandoms · +350 diseños</p>
+
+            <!-- Redes sociales -->
+            <div class="footer-social">
+              <!-- Instagram -->
+              <a
+                href="https://instagram.com/hades.salem"
+                target="_blank"
+                class="social-link"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+
+              <!-- TikTok -->
+              <a
+                href="https://tiktok.com/@hades.salem"
+                target="_blank"
+                class="social-link"
+                aria-label="TikTok"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"
+                  />
+                </svg>
+              </a>
+
+              <!-- WhatsApp -->
+              <a
+                href="https://wa.me/5491124557767"
+                target="_blank"
+                class="social-link"
+                aria-label="WhatsApp"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Enlaces del footer -->
+          <div class="footer-links">
+            <!-- Navegación -->
+            <div class="footer-column">
+              <h4>Navegación</h4>
+              <ul>
+                <li><a href="#galeria">Galería</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#sobre-mi">Sobre Mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+              </ul>
+            </div>
+
+            <!-- Productos -->
+            <div class="footer-column">
+              <h4>Productos</h4>
+              <ul>
+                <li><a href="#productos">Llaveros</a></li>
+                <li><a href="#productos">Prints</a></li>
+                <li><a href="#productos">Pines</a></li>
+                <li><a href="#productos">Phone Charms</a></li>
+                <li><a href="#productos">Stickers</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parte inferior del footer -->
+        <div class="footer-bottom">
+          <p>&copy; 2026 Hades Salem. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ============================================
+         SCRIPTS
+         ============================================ -->
+    <script src="script.js"></script>
+    <script>
+      // Inicializar iconos de Lucide
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

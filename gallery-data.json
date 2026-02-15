@@ -1,0 +1,515 @@
+{
+  "fandoms": [
+    {
+      "id": "isaac",
+      "name": "The Binding of Isaac",
+      "featured": true,
+      "thumbnail": "img/TBOI.webp",
+      "products": {
+        "llaveros": [
+          {
+            "id": "isaac-llavero-1",
+            "image": "img/proximamente.webp",
+            "name": "Isaac"
+          },
+          {
+            "id": "isaac-llavero-2",
+            "image": "img/isaac/llaveros/azazel.webp",
+            "name": "Azazel"
+          },
+          {
+            "id": "isaac-llavero-3",
+            "image": "img/isaac/llaveros/magdalena.webp",
+            "name": "Magdalena"
+          },
+          {
+            "id": "isaac-llavero-4",
+            "image": "img/proximamente.webp",
+            "name": "Cain"
+          },
+          {
+            "id": "isaac-llavero-5",
+            "image": "img/isaac/llaveros/judas.webp",
+            "name": "Judas"
+          },
+          {
+            "id": "isaac-llavero-6",
+            "image": "img/proximamente.webp",
+            "name": "Eve"
+          },
+          {
+            "id": "isaac-llavero-7",
+            "image": "img/proximamente.webp",
+            "name": "Samson"
+          },
+          {
+            "id": "isaac-llavero-8",
+            "image": "img/proximamente.webp",
+            "name": "Lilith"
+          }
+        ],
+        "prints": [
+          {
+            "id": "isaac-print-1",
+            "image": "img/proximamente.webp",
+            "name": "Isaac A4"
+          },
+          {
+            "id": "isaac-print-2",
+            "image": "img/proximamente.webp",
+            "name": "Boss Rush A4"
+          },
+          {
+            "id": "isaac-print-3",
+            "image": "img/proximamente.webp",
+            "name": "Items A5"
+          },
+          {
+            "id": "isaac-print-4",
+            "image": "img/proximamente.webp",
+            "name": "Personajes A5"
+          }
+        ],
+        "pines": [
+          {
+            "id": "isaac-pin-1",
+            "image": "img/proximamente.webp",
+            "name": "Isaac Pin"
+          },
+          {
+            "id": "isaac-pin-2",
+            "image": "img/proximamente.webp",
+            "name": "Azazel Pin"
+          },
+          {
+            "id": "isaac-pin-3",
+            "image": "img/proximamente.webp",
+            "name": "Mom Pin"
+          }
+        ],
+        "stickers": [
+          {
+            "id": "isaac-sticker-1",
+            "image": "img/proximamente.webp",
+            "name": "Set Isaac"
+          },
+          {
+            "id": "isaac-sticker-2",
+            "image": "img/proximamente.webp",
+            "name": "Items Pack"
+          },
+          {
+            "id": "isaac-sticker-3",
+            "image": "img/proximamente.webp",
+            "name": "Bosses Pack"
+          }
+        ],
+        "phone-charms": [
+          {
+            "id": "isaac-charm-1",
+            "image": "img/proximamente.webp",
+            "name": "Isaac Charm"
+          },
+          {
+            "id": "isaac-charm-2",
+            "image": "img/proximamente.webp",
+            "name": "Guppy Charm"
+          }
+        ],
+        "mini-llaveros": [
+          {
+            "id": "isaac-mini-1",
+            "image": "img/proximamente.webp",
+            "name": "Mini Isaac"
+          },
+          {
+            "id": "isaac-mini-2",
+            "image": "img/proximamente.webp",
+            "name": "Mini Azazel"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dandysworld",
+      "name": "Dandy's World",
+      "featured": true,
+      "thumbnail": "img/dandys-world.webp",
+      "products": {
+        "llaveros": [
+          {
+            "id": "dw-llavero-1",
+            "image": "img/proximamente.webp",
+            "name": "Dandy"
+          },
+          {
+            "id": "dw-llavero-2",
+            "image": "img/proximamente.webp",
+            "name": "Astro"
+          },
+          {
+            "id": "dw-llavero-3",
+            "image": "img/proximamente.webp",
+            "name": "Sprout"
+          },
+          {
+            "id": "dw-llavero-4",
+            "image": "img/proximamente.webp",
+            "name": "Vee"
+          },
+          {
+            "id": "dw-llavero-5",
+            "image": "img/proximamente.webp",
+            "name": "Goob"
+          },
+          {
+            "id": "dw-llavero-6",
+            "image": "img/proximamente.webp",
+            "name": "Rodger"
+          }
+        ],
+        "prints": [
+          {
+            "id": "dw-print-1",
+            "image": "img/proximamente.webp",
+            "name": "Dandy A4"
+          },
+          {
+            "id": "dw-print-2",
+            "image": "img/proximamente.webp",
+            "name": "Astro A4"
+          }
+        ],
+        "pines": [
+          {
+            "id": "dw-pin-1",
+            "image": "img/proximamente.webp",
+            "name": "Sprout Pin"
+          },
+          {
+            "id": "dw-pin-2",
+            "image": "img/proximamente.webp",
+            "name": "Vee Pin"
+          }
+        ],
+        "stickers": [
+          {
+            "id": "dw-sticker-1",
+            "image": "img/proximamente.webp",
+            "name": "Goob"
+          }
+        ]
+      }
+    },
+    {
+      "id": "tf2",
+      "name": "Team Fortress 2",
+      "featured": true,
+      "thumbnail": "img/TF2.webp",
+      "products": {
+        "llaveros": [
+          {
+            "id": "tf2-llavero-1",
+            "image": "img/proximamente.webp",
+            "name": "Heavy"
+          },
+          {
+            "id": "tf2-llavero-2",
+            "image": "img/proximamente.webp",
+            "name": "Medic"
+          },
+          {
+            "id": "tf2-llavero-3",
+            "image": "img/proximamente.webp",
+            "name": "Scout"
+          },
+          {
+            "id": "tf2-llavero-4",
+            "image": "img/proximamente.webp",
+            "name": "Spy"
+          }
+        ],
+        "prints": [
+          {
+            "id": "tf2-print-1",
+            "image": "img/proximamente.webp",
+            "name": "Engineer A4"
+          }
+        ],
+        "stickers": [
+          {
+            "id": "tf2-sticker-1",
+            "image": "img/proximamente.webp",
+            "name": "Pack Stickers"
+          }
+        ]
+      }
+    },
+    {
+      "id": "smilingfriends",
+      "name": "Smiling Friends",
+      "featured": true,
+      "thumbnail": "img/smiling-friends.webp",
+      "products": {
+        "llaveros": [
+          {
+            "id": "sm-llavero-1",
+            "image": "img/proximamente.webp",
+            "name": "Pim Pimling"
+          },
+          {
+            "id": "sm-llavero-2",
+            "image": "img/proximamente.webp",
+            "name": "Charlie Dompler"
+          },
+          {
+            "id": "sm-llavero-3",
+            "image": "img/proximamente.webp",
+            "name": "Allan Red"
+          },
+          {
+            "id": "sm-llavero-4",
+            "image": "img/proximamente.webp",
+            "name": "Glep"
+          },
+          {
+            "id": "sm-llavero-5",
+            "image": "img/proximamente.webp",
+            "name": "Sr. Jefe"
+          },
+          {
+            "id": "sm-llavero-6",
+            "image": "img/proximamente.webp",
+            "name": "Pim Pimling"
+          }
+        ],
+        "prints": [
+          {
+            "id": "sm-print-1",
+            "image": "img/proximamente.webp",
+            "name": "Charlie Dompler A4"
+          }
+        ],
+        "pines": [
+          {
+            "id": "sm-pin-1",
+            "image": "img/proximamente.webp",
+            "name": "Allan Red Pin"
+          }
+        ]
+      }
+    },
+    {
+      "id": "vocaloid",
+      "name": "Vocaloid",
+      "featured": true,
+      "thumbnail": "img/vocaloid.webp",
+      "products": {
+        "llaveros": [
+          {
+            "id": "vocaloid-llavero-1",
+            "image": "img/proximamente.webp",
+            "name": "Hatsune Miku"
+          },
+          {
+            "id": "vocaloid-llavero-2",
+            "image": "img/proximamente.webp",
+            "name": "Miku Sakura"
+          },
+          {
+            "id": "vocaloid-llavero-3",
+            "image": "img/proximamente.webp",
+            "name": "Rin Kagamine"
+          },
+          {
+            "id": "vocaloid-llavero-4",
+            "image": "img/proximamente.webp",
+            "name": "Len Kagamine"
+          },
+          {
+            "id": "vocaloid-llavero-5",
+            "image": "img/proximamente.webp",
+            "name": "Luka Megurine"
+          },
+          {
+            "id": "vocaloid-llavero-6",
+            "image": "img/proximamente.webp",
+            "name": "KAITO"
+          }
+        ],
+        "prints": [
+          {
+            "id": "vocaloid-print-1",
+            "image": "img/proximamente.webp",
+            "name": "Miku A4"
+          },
+          {
+            "id": "vocaloid-print-2",
+            "image": "img/proximamente.webp",
+            "name": "Vocaloids A4"
+          }
+        ],
+        "pines": [
+          {
+            "id": "vocaloid-pin-1",
+            "image": "img/proximamente.webp",
+            "name": "Miku Pin"
+          }
+        ],
+        "stickers": [
+          {
+            "id": "vocaloid-sticker-1",
+            "image": "img/proximamente.webp",
+            "name": "Vocaloid Pack"
+          }
+        ]
+      }
+    },
+    {
+      "id": "brawlstars",
+      "name": "Brawl Stars",
+      "featured": true,
+      "thumbnail": "img/brawl-stars.webp",
+      "products": {
+        "llaveros": [
+          {
+            "id": "bs-llavero-1",
+            "image": "img/shelly-llavero.webp",
+            "name": "Shelly"
+          },
+          {
+            "id": "bs-llavero-2",
+            "image": "img/spike-llavero.webp",
+            "name": "Spike"
+          },
+          {
+            "id": "bs-llavero-3",
+            "image": "img/colt-llavero.webp",
+            "name": "Colt"
+          },
+          {
+            "id": "bs-llavero-4",
+            "image": "img/darryl-llavero.webp",
+            "name": "Darryl"
+          },
+          {
+            "id": "bs-llavero-5",
+            "image": "img/8bit-llavero.webp",
+            "name": "8-Bit"
+          },
+          {
+            "id": "bs-llavero.6",
+            "image": "img/carl-llavero.webp",
+            "name": "Carl"
+          }
+        ],
+        "prints": [
+          {
+            "id": "otros-print-1",
+            "image": "img/proximamente.webp",
+            "name": "Print Variado 1"
+          }
+        ],
+        "stickers": [
+          {
+            "id": "otros-sticker-1",
+            "image": "img/proximamente.webp",
+            "name": "Pack Mix"
+          }
+        ]
+      }
+    },
+    {
+      "id": "otros",
+      "name": "Otros Fandoms",
+      "featured": true,
+      "thumbnail": "img/masdiseños.jpg",
+      "products": {
+        "llaveros": [
+          {
+            "id": "slam-dunk-llaveros",
+            "image": "img/slam-dunk.webp",
+            "name": "Slam Dunk"
+          },
+          {
+            "id": "south-park-llaveros",
+            "image": "img/south-park.webp",
+            "name": "South Park"
+          },
+          {
+            "id": "knt-llaveros",
+            "image": "img/kimi-ni-todoke.webp",
+            "name": "Kimi Ni Todoke"
+          },
+          {
+            "id": "pokemon-llaveros",
+            "image": "img/pokemon.webp",
+            "name": "Pokémon"
+          },
+          {
+            "id": "ptp-llaveros",
+            "image": "img/parappa.webp",
+            "name": "PaRappa the Rapper"
+          },
+          {
+            "id": "bh-llaveros",
+            "image": "img/bojack-horseman.webp",
+            "name": "BoJack Horseman"
+          }
+        ],
+        "prints": [
+          {
+            "id": "bl-llaveros",
+            "image": "img/blue-lock.webp",
+            "name": "Blue Lock"
+          }
+        ],
+        "stickers": [
+          {
+            "id": "sg-llaveros",
+            "image": "img/skull-girls.webp",
+            "name": "Skull Girls"
+          }
+        ]
+      }
+    }
+  ],
+  "productTypes": [
+    {
+      "id": "llaveros",
+      "name": "Llaveros",
+      "icon": "key-round",
+      "description": "Acrílico de alta calidad con mosquetones"
+    },
+    {
+      "id": "prints",
+      "name": "Prints",
+      "icon": "frame",
+      "description": "Impresiones en papel fotográfico"
+    },
+    {
+      "id": "pines",
+      "name": "Pines",
+      "icon": "circle-dot",
+      "description": "Pins de metal con aguja"
+    },
+    {
+      "id": "stickers",
+      "name": "Stickers",
+      "icon": "sparkles",
+      "description": "Calcomanías resistentes al agua"
+    },
+    {
+      "id": "phone-charms",
+      "name": "Phone Charms",
+      "icon": "smartphone",
+      "description": "Accesorios para tu celular"
+    },
+    {
+      "id": "mini-llaveros",
+      "name": "Mini Llaveros",
+      "icon": "key",
+      "description": "Versión mini de 4cm"
+    }
+  ]
+}
