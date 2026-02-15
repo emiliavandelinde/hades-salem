@@ -70,10 +70,13 @@ body {
    CURSOR PERSONALIZADO TIPO POKÉMON
    ============================================ */
 
-*,
-*::before,
-*::after {
-  cursor: none !important;
+/* Solo aplicar cursor personalizado en dispositivos con mouse */
+@media (hover: hover) and (pointer: fine) {
+  *,
+  *::before,
+  *::after {
+    cursor: none !important;
+  }
 }
 
 .custom-cursor {
@@ -81,6 +84,15 @@ body {
   pointer-events: none;
   z-index: 99999;
   transform: translate(-50%, -50%);
+  /* Ocultar en móviles por defecto */
+  display: none;
+}
+
+/* Mostrar solo en dispositivos con mouse */
+@media (hover: hover) and (pointer: fine) {
+  .custom-cursor {
+    display: block;
+  }
 }
 
 .cursor-pokemon {
@@ -1887,23 +1899,59 @@ i[data-lucide] {
 }
 
 /* ============================================
-   RESPONSIVE - MÓVILES
+   RESPONSIVE - MÓVILES OPTIMIZADO
    ============================================ */
 @media (max-width: 640px) {
+  :root {
+    --section-padding: 40px;
+    --nav-height: 60px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
   .nav-container {
-    padding: 0 20px;
+    padding: 0 12px;
+  }
+
+  .nav {
+    padding: 10px 0;
   }
 
   .hero {
-    padding: calc(var(--nav-height) + 40px) 20px 40px;
+    padding: calc(var(--nav-height) + 20px) 12px 20px;
+    min-height: 70vh;
   }
 
   .hero-title {
-    font-size: 48px;
+    font-size: 28px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+
+  .title-line {
+    letter-spacing: 2px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+    margin-bottom: 20px;
   }
 
   .section-title {
-    font-size: 36px;
+    font-size: 22px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+
+  .section-subtitle {
+    font-size: 14px;
+    margin-bottom: 25px;
   }
 
   .footer-links {
@@ -1911,70 +1959,406 @@ i[data-lucide] {
   }
 
   .logo-image {
-    height: 40px;
+    height: 30px;
   }
 
-  .services-grid,
-  .shipping-grid {
+  /* Productos móvil - MUY compacto */
+  .products {
+    padding: 35px 0;
+  }
+
+  .products-grid {
+    gap: 15px;
     grid-template-columns: 1fr;
+  }
+
+  .product-card {
+    padding: 20px 15px;
+  }
+
+  .product-title {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .product-description {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .product-features {
+    gap: 6px;
+    margin: 12px 0;
+  }
+
+  .feature {
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .product-price {
+    font-size: 18px;
+    margin-top: 12px;
   }
 
   /* Contacto móvil */
+  .contact {
+    padding: 35px 0;
+  }
+
   .contact-content {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 20px;
   }
 
   .contact-form-container {
-    padding: 30px 20px;
+    padding: 20px 12px;
   }
 
   .form-title {
-    font-size: 24px;
+    font-size: 18px;
+    margin-bottom: 15px;
   }
 
-  /* Galería móvil */
+  .form-group {
+    gap: 5px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .contact-section {
+    padding: 15px 12px;
+  }
+
+  .contact-section-title {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .contact-method {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .method-details h4 {
+    font-size: 13px;
+  }
+
+  .method-details a {
+    font-size: 12px;
+  }
+
+  .payment-badge {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+
+  .policies-list li {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  /* Galería móvil - MUY compacta */
+  .gallery {
+    padding: 35px 0;
+  }
+
+  .fandom-filters {
+    gap: 6px;
+    margin: 20px 0;
+  }
+
+  .filter-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  /* CRITICAL: Grid de 2 columnas con imágenes PEQUEÑAS */
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .product-type-filters {
+    gap: 8px;
+    margin: 20px 0;
+    padding: 0 10px;
   }
 
   .product-type-btn {
-    min-width: 100%;
+    min-width: auto;
     flex-direction: row;
     justify-content: center;
-    padding: 15px 20px;
+    padding: 10px 12px;
+    gap: 8px;
   }
 
   .product-type-icon {
-    font-size: 24px;
+    font-size: 18px;
+  }
+
+  .product-type-name {
+    font-size: 12px;
+  }
+
+  .product-count {
+    font-size: 10px;
+    padding: 2px 8px;
   }
 
   .fandom-name {
-    font-size: 28px;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
 
   .featured-title {
+    font-size: 18px;
+    margin: 20px 0 15px;
+  }
+
+  /* CRITICAL: Imágenes de productos más pequeñas */
+  .product-item {
+    border-radius: 10px;
+  }
+
+  .product-item-image {
+    aspect-ratio: 1;
+  }
+
+  .product-item-info {
+    padding: 8px;
+  }
+
+  .product-item-info h4 {
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  /* CRITICAL: Mostrar flechas de paginación */
+  .product-pagination-container {
+    display: grid;
+    grid-template-columns: 40px 1fr 40px;
+    gap: 10px;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  .pagination-arrow {
+    display: flex !important;
+    width: 40px;
+    height: 40px;
     font-size: 24px;
   }
 
+  /* Gallery grid featured más pequeño */
+  .gallery-grid {
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-item {
+    border-radius: 10px;
+  }
+
+  .gallery-overlay {
+    padding: 12px;
+  }
+
+  .gallery-overlay h3 {
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .gallery-overlay p {
+    font-size: 11px;
+  }
+
+  /* About section móvil */
+  .about {
+    padding: 35px 0;
+  }
+
+  .about-stats {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    padding: 15px 12px;
+  }
+
+  .stat-number {
+    font-size: 32px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+  }
+
+  .shipping-info {
+    margin: 30px 0;
+  }
+
+  .shipping-grid {
+    gap: 15px;
+  }
+
+  .shipping-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .shipping-card {
+    padding: 20px 15px;
+  }
+
+  .shipping-card h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .shipping-card p {
+    font-size: 13px;
+  }
+
+  /* Botones móvil */
+  .btn {
+    padding: 10px 25px;
+    font-size: 13px;
+  }
+
+  .hero-cta {
+    gap: 12px;
+  }
+
+  /* Comisiones */
+  .custom-commissions {
+    margin-top: 35px;
+  }
+
+  .commission-card {
+    padding: 25px 15px;
+  }
+
+  .commission-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .commission-card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .commission-price {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  /* Footer móvil */
+  .footer {
+    padding: 30px 0 15px;
+  }
+
+  .footer-content {
+    gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  .footer-logo {
+    font-size: 18px;
+  }
+
+  .footer-brand p {
+    font-size: 13px;
+  }
+
+  .footer-social {
+    gap: 10px;
+  }
+
+  .social-link {
+    width: 35px;
+    height: 35px;
+  }
+
+  .social-link svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .footer-column h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .footer-column a {
+    font-size: 13px;
+  }
+
+  .footer-column ul {
+    gap: 8px;
+  }
+
+  .footer-bottom {
+    padding-top: 20px;
+    font-size: 12px;
+  }
+
+  /* Iconos Lucide móvil - más pequeños */
   .product-icon i[data-lucide] {
-    width: 48px;
-    height: 48px;
+    width: 35px;
+    height: 35px;
   }
 
   .product-type-icon i[data-lucide] {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
   }
 
   .shipping-icon i[data-lucide] {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
 
   .method-icon i[data-lucide] {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
+  }
+
+  .method-icon {
+    min-width: 25px;
+    font-size: 22px;
+  }
+
+  /* Navegación móvil ajustes */
+  .nav-menu {
+    padding: 25px;
+    gap: 20px;
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .nav-menu a {
+    font-size: 13px;
+  }
+
+  /* Catálogo CTA */
+  .catalog-cta {
+    margin: 30px 0 12px;
   }
 }
 
@@ -1983,40 +2367,50 @@ i[data-lucide] {
    ============================================ */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 36px;
+    font-size: 24px;
   }
 
   .product-grid {
-    gap: 15px;
+    gap: 8px;
   }
 
   .product-type-btn {
-    padding: 12px 15px;
-    font-size: 14px;
+    padding: 8px 10px;
+    font-size: 11px;
   }
 
   .section-title {
-    font-size: 32px;
+    font-size: 20px;
   }
 
   .contact-form-container {
-    padding: 25px 15px;
+    padding: 18px 10px;
   }
 
   .contact-section {
-    padding: 20px;
+    padding: 15px 10px;
   }
 
   .method-icon {
-    font-size: 28px;
-    min-width: 35px;
+    font-size: 20px;
+    min-width: 22px;
   }
 
   .method-details h4 {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .method-details a {
-    font-size: 13px;
+    font-size: 11px;
+  }
+
+  .product-item-info h4 {
+    font-size: 10px;
+  }
+
+  .pagination-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
   }
 }
